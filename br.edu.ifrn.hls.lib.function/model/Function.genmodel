@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.edu.ifrn.hls.lib.function/src" modelPluginID="br.edu.ifrn.hls.lib.function"
+    modelName="Function" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Function.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Function" basePackage="function" disposableProviderFactory="true"
+      ecorePackage="Function.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Function.ecore#//IOFlag">
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//IOFlag/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//IOFlag/Write"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Function.ecore#//Dependency">
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//Dependency/none"/>
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//Dependency/min_inputs"/>
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//Dependency/max_inputs"/>
+      <genEnumLiterals ecoreEnumLiteral="Function.ecore#//Dependency/all_inputs"/>
+    </genEnums>
+    <genClasses ecoreClass="Function.ecore#//Functions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Function.ecore#//Functions/functions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Function.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//Function/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//Function/inputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//Function/outputs"/>
+    </genClasses>
+    <genClasses ecoreClass="Function.ecore#//ComputingFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//ComputingFunction/dependency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//ComputingFunction/commutativity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//ComputingFunction/associativity"/>
+    </genClasses>
+    <genClasses ecoreClass="Function.ecore#//MemoryAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Function.ecore#//MemoryAccess/io"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
