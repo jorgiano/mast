@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.edu.ifrn.hls.cdfg/src" modelPluginID="br.edu.ifrn.hls.cdfg"
+    modelName="cdfg" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="6.0" copyrightFields="false" usedGenPackages="../../br.edu.ifrn.hls.lib.function/model/Function.genmodel#//function"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cdfg.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="cdfg" basePackage="cdfg" disposableProviderFactory="true" ecorePackage="cdfg.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cdfg.ecore#//BranchCondition">
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//BranchCondition/TRUE"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//BranchCondition/FALSE"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//BranchCondition/ALWAYS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cdfg.ecore#//Quantization">
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/RND"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/RND_ZERO"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/RND_MIN_INF"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/RND_INF"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/RND_CONV"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/TRN"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Quantization/TRN_ZERO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cdfg.ecore#//Overflow">
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Overflow/SAT"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Overflow/SAT_ZERO"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Overflow/SAT_SYM"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Overflow/WRAP"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Overflow/WRAP_SM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cdfg.ecore#//Standard">
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Standard/IEEE_754_1985"/>
+      <genEnumLiterals ecoreEnumLiteral="cdfg.ecore#//Standard/IEEE_754_2008"/>
+    </genEnums>
+    <genClasses ecoreClass="cdfg.ecore#//CFG">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//CFG/nodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//CFG/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//CFG/arcs"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//DFG">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/sink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/arcs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFG/to"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cdfg.ecore#//OperationNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//OperationNode/precedes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//OperationNode/succeeds"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//OperationNode/function"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//DFGArc">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFGArc/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFGArc/target"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Source"/>
+    <genClasses ecoreClass="cdfg.ecore#//Sink"/>
+    <genClasses image="false" ecoreClass="cdfg.ecore#//DFGNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFGNode/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DFGNode/from"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Computing"/>
+    <genClasses ecoreClass="cdfg.ecore#//Load"/>
+    <genClasses ecoreClass="cdfg.ecore#//Store"/>
+    <genClasses ecoreClass="cdfg.ecore#//Jump">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//Jump/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//Jump/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//Jump/branchCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//Jump/condition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cdfg.ecore#//DataNode">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DataNode/definition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//DataNode/used"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//DataNode/constant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//DataNode/numberOfBits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//DataNode/value"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//Integer/signed"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//FixedPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//FixedPoint/quantization"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//FixedPoint/overflow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//FixedPoint/wl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//FixedPoint/iwl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//FixedPoint/nbits"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Float">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//Float/standard"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Boolean"/>
+    <genClasses ecoreClass="cdfg.ecore#//PHI_node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//PHI_node/args"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//Annotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//Annotation/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdfg.ecore#//Annotation/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cdfg.ecore#//Annotable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdfg.ecore#//Annotable/annotations"/>
+    </genClasses>
+    <genClasses ecoreClass="cdfg.ecore#//PHI_arg">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//PHI_arg/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdfg.ecore#//PHI_arg/data"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
